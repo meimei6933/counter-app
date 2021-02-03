@@ -3,16 +3,16 @@ import React, { Component } from 'react';
 
 class Counter extends Component {
     state = {
-        count: 0,
-        tags: ["tag1", "tag2", "tag3"]
+        count: this.props.value //value is a bug in the tut
     };
 
     handleIncrement = product => {
-        console.log(product);
+        // console.log(product);
         this.setState({count: this.state.count + 1});
     };
 
     render() {
+        // console.log("props", this.props);
         return (
             <div>
                 <span className={this.getBadgeClasses()}>{this.formatCount()}</span>
